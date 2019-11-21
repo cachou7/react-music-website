@@ -20,3 +20,27 @@
 .App-link {
   color: #09d3ac;
 }
+
+body {
+  font-family: 'Poppins',sans-serif;
+  position: relative;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.contentContainer {
+  margin-right: 6%;
+  margin-left: 6%;
+}
+
+.panel-body {
+  background-color:black !important;
+}
+
+::selection {
+  background: #333333;
+  color: white;
+}
