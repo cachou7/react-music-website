@@ -3,7 +3,6 @@ import './App.css';
 import { HeaderContainer } from './components/HeaderContainer';
 import { Text } from './components/Text';
 import { Img } from './components/Img';
-import { Row, Col } from 'react-bootstrap';
 import { AlbumInfo } from './components/AlbumInfo';
 import { LyricsInfo } from './components/LyricsInfo';
 import { PaddingContainer } from './components/PaddingContainer';
@@ -12,6 +11,8 @@ import { trackList } from './global/constants/constants';
 import { AudioPlayerProvider } from "./global/hooks/AudioPlayerContext";
 import { TrackList } from './components/TrackList';
 import { ReviewsInfo } from './components/ReviewsInfo';
+import { Row } from './components/Row';
+import { Col } from './components/Col';
 
 function App() {
   return (
