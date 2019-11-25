@@ -5,13 +5,13 @@ import { useWindowSize } from '../../global/hooks/useWindowSize';
 
 const convertSize = (width, sizeInputs) => {
   if (width >= 1200 && sizeInputs[3]) {
-    return 'lg'
+    return sizeInputs[3] / 12 * 100
   } else if (width >= 992 && sizeInputs[2]) {
-    return 'md'
+    return sizeInputs[2] / 12 * 100
   } else if (width >= 768 && sizeInputs[1]) {
-    return 'sm'
+    return sizeInputs[1] / 12 * 100
   } else if (width >= 0 && sizeInputs[0]) {
-    return 'xs'
+    return sizeInputs[0] / 12 * 100
   }
 }
 
@@ -27,7 +27,7 @@ const Col = ({
   const sizeInputs = [xs, sm, md, lg];
 
   return (
-    <StyledCol xs={xs} sm={sm} md={md} lg={lg} screenSize={convertSize(windowSize.width, sizeInputs)}>
+    <StyledCol width={convertSize(windowSize.width, sizeInputs)}>
       {children}
     </StyledCol>
   )
