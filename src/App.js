@@ -11,8 +11,13 @@ import { trackList } from './global/constants/constants';
 import { AudioPlayerProvider } from "./global/hooks/AudioPlayerContext";
 import { TrackList } from './components/TrackList';
 import { ReviewsInfo } from './components/ReviewsInfo';
+import { ShareInfo } from './components/ShareInfo';
 import { Row } from './components/Row';
 import { Col } from './components/Col';
+import { AvailableOnInfo } from './components/AvailableOnInfo';
+import { LatestVideoInfo } from './components/LatestVideoInfo';
+import { Footer } from './components/Footer';
+import { PageControls } from './components/PageControls';
 
 function App() {
   return (
@@ -34,10 +39,14 @@ function App() {
             <AlbumInfo headerTitle="About Album" />
             <LyricsInfo headerTitle="Available Lyrics" />
             <ReviewsInfo headerTitle="Album Reviews" />
+            <ShareInfo headerTitle="Share" />
           </Col>
+          <AvailableOnInfo headerTitle="Available On" />
+          <LatestVideoInfo headerTitle="Latest Video" />
+          <PageControls />
         </Row>
       </div>
-      <PaddingContainer top='250px' />
+      <Footer />
     </>
   );
 }

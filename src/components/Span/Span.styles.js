@@ -58,16 +58,45 @@ const types = {
     color: 'black',
     font: '23px',
     weight: '600'
+  },
+  'reviewControls': {
+    color: '#8a8a8a',
+    font: '22px',
+    cursor: 'pointer',
+    display: 'inline-block',
+    position: 'absolute',
+    bottom: '0',
+    right: '0'
+  },
+  'footerHeader': {
+    font: '50px',
+    color: 'white',
+    weight: '700',
+    textAlign: 'center'
+  },
+  'footerCopyright': {
+    font: '16px',
+    color: '#c2c2c2',
+    weight: '400',
+    hover: 'white',
+    cursor: 'pointer'
+  },
+  'footerNumber': {
+    font: '16px',
+    color: '#c2c2c2',
+    weight: '400',
+    marginRight: '15px',
   }
 };
 
 const StyledText = styled.span`
   font-size: ${props => types[props.type].font};
   color: ${props => types[props.type].color};
-  top: ${props => types[props.type].top || 0};
-  left: ${props => types[props.type].left || 0};
-  right: ${props => types[props.type].right || 0};
-  position: ${props => types[props.type].position || 'relative'};
+  top: ${props => types[props.type].top};
+  bottom: ${props => types[props.type].bottom};
+  left: ${props => types[props.type].left};
+  right: ${props => types[props.type].right};
+  position: ${props => types[props.type].position};
   text-align: ${props => types[props.type].textAlign};
   font-weight: ${props => types[props.type].weight};
   line-height: ${props => types[props.type].lineheight};
@@ -78,6 +107,7 @@ const StyledText = styled.span`
     color: ${props => types[props.type].hover};
   }
   cursor: ${props => types[props.type].cursor};
+  margin-right: ${props => types[props.type].marginRight};
 `;
 
 export { StyledText };

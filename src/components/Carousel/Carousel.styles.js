@@ -6,4 +6,9 @@ const StyledCarousel = styled(Carousel)`
   vertical-align: middle;
 `;
 
-export { StyledCarousel };
+const StyledWrapper = styled.div`
+  position: relative;
+`;
+
+
+export { StyledCarousel, StyledWrapper };

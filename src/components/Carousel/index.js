@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { StyledCarousel } from './Carousel.styles';
+import { StyledCarousel, StyledWrapper } from './Carousel.styles';
+import { Span } from '../Span';
 import { CarouselCard } from '../CarouselCard';
 import { Carousel } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -19,28 +20,27 @@ const MyCarousel = () => {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(null);
 
-  const getPrevIdx = () => ((index + -1) % reviews.length + reviews.length) % reviews.length;
+  const getPrevIdx = () => ((index - 1) % reviews.length + reviews.length) % reviews.length;
   const getNextIdx = () => (index + 1) % reviews.length;
 
   const handleSelect = (selectedIndex, direction) => {
     setIndex(selectedIndex);
     setDirection(direction);
-    console.log(index, direction);
   };
 
   return (
-    <>
-      <StyledCarousel controls={true} wrap={true} touch={true} indicators={false} direction={direction} activeIndex={index} interval='500000' onSelect={handleSelect}>
+    <StyledWrapper>
+      <StyledCarousel controls={false} wrap={true} touch={true} indicators={false} direction={direction} activeIndex={index} interval='3000' onSelect={handleSelect}>
         {reviews.map((review) => (
           <Carousel.Item>
             <CarouselCard textContent={review.info} authorName={'— ' + review.name} onClick={() => setIndex(index - 1)} handleSelect={handleSelect} />
           </Carousel.Item>
         ))}
       </StyledCarousel>
-      <span style={{ float: 'right', color: '#8a8a8a', fontSize: '24px', cursor: 'pointer', marginBottom: '-14px' }}>
+      <Span type='reviewControls'>
         <FontAwesomeIcon icon={faChevronLeft} size="xs" onClick={() => handleSelect(getPrevIdx, 'prev')} /> / <FontAwesomeIcon icon={faChevronRight} size="xs" onClick={() => handleSelect(getNextIdx, 'next')} />
-      </span>
-    </>
+      </Span>
+    </StyledWrapper>
   );
 };
 
