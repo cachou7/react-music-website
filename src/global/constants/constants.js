@@ -5,12 +5,12 @@ const trackList = {
   tracks: [
     {
       name: 'Dreaming Of Joy',
-      url: '/assets/Shelter.mp3',
+      url: '/assets/Broken-Song.mp3',
       buyLink: true
     },
     {
       name: 'Broken Song',
-      url: '/assets/Sad Machine.mp3',
+      url: '/assets/Ghost-Soul.mp3',
       buyLink: false
     },
     {
@@ -25,38 +25,38 @@ const trackList = {
     },
     {
       name: 'Midnight Tales',
-      url: '/assets/Shelter.mp3',
+      url: '/assets/Broken-Song.mp3',
       buyLink: true
     },
     {
       name: 'Stop Story',
-      url: '/assets/Sad Machine.mp3',
+      url: '/assets/Ghost-Soul.mp3',
       buyLink: true
     },
     {
       name: 'Surprise Of My Party',
-      url: '/assets/Shelter.mp3',
+      url: '/assets/Broken-Song.mp3',
       buyLink: true
     },
     {
       name: 'Dream On',
-      url: '/assets/Sad Machine.mp3',
+      url: '/assets/Ghost-Soul.mp3',
       buyLink: true
     },
     {
       name: 'Ghost Soul',
-      url: '/assets/Shelter.mp3',
+      url: '/assets/Broken-Song.mp3',
       buyLink: false
     },
     {
       name: 'Give Back My Bass',
-      url: '/assets/Sad Machine.mp3',
+      url: '/assets/Ghost-Soul.mp3',
       buyLink: true
     }
   ],
   currentTrackIndex: null,
   isPlaying: false,
-  initDur: '03:38'
+  initDur: '00:30'
 };
 
 const iTunesLink = 'https://www.apple.com/itunes/';
