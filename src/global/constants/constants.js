@@ -5,52 +5,52 @@ const trackList = {
   tracks: [
     {
       name: 'Dreaming Of Joy',
-      url: '/assets/Broken-Song.mp3',
+      url: '/assets/Ghost-Soul.mp3',
       buyLink: true
     },
     {
       name: 'Broken Song',
-      url: '/assets/Ghost-Soul.mp3',
+      url: '/assets/Broken-Song.mp3',
       buyLink: false
     },
     {
       name: 'Crazy Circus',
-      url: '/assets/Broken-Song.mp3',
+      url: '/assets/Ghost-Soul.mp3',
       buyLink: true
     },
     {
       name: 'Give Her Shadow',
-      url: '/assets/Ghost-Soul.mp3',
+      url: '/assets/Broken-Song.mp3',
       buyLink: true
     },
     {
       name: 'Midnight Tales',
-      url: '/assets/Broken-Song.mp3',
+      url: '/assets/Ghost-Soul.mp3',
       buyLink: true
     },
     {
       name: 'Stop Story',
-      url: '/assets/Ghost-Soul.mp3',
+      url: '/assets/Broken-Song.mp3',
       buyLink: true
     },
     {
       name: 'Surprise Of My Party',
-      url: '/assets/Broken-Song.mp3',
+      url: '/assets/Ghost-Soul.mp3',
       buyLink: true
     },
     {
       name: 'Dream On',
-      url: '/assets/Ghost-Soul.mp3',
+      url: '/assets/Broken-Song.mp3',
       buyLink: true
     },
     {
       name: 'Ghost Soul',
-      url: '/assets/Broken-Song.mp3',
+      url: '/assets/Ghost-Soul.mp3',
       buyLink: false
     },
     {
       name: 'Give Back My Bass',
-      url: '/assets/Ghost-Soul.mp3',
+      url: '/assets/Broken-Song.mp3',
       buyLink: true
     }
   ],

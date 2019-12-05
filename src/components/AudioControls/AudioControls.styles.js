@@ -8,8 +8,8 @@ const StyledCol = styled(Col)`
   border-style: solid;
   border-top: none;
   border-bottom: none;
-  border-left: ${props => props.back || props.play ? 'none' : ''};
-  border-right: ${props => props.forward || props.play ? 'none' : ''};
+  border-left: ${props => (props.back || props.play) ? 'none' : 'solid'};
+  border-right: ${props => (props.forward || props.play) ? 'none' : 'solid'};
   border-color: rgba(204,204,204,.5);
   :hover {
     color: #545454;

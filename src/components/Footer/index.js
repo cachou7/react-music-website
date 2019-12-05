@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Span } from '../Span';
 import { StyledFooter, StyledIcon, StyledWrapper } from './Footer.styles';
 import { PaddingContainer } from '../PaddingContainer';

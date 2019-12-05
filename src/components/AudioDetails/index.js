@@ -6,11 +6,10 @@ import { wrapperDiv, albumTextDiv, audioTimeDiv } from './AudioDetails.styles';
 import moment from "moment";
 import momentDurationFormatSetup from "moment-duration-format";
 
-function formatDuration(duration) {
-  return moment
+const formatDuration = duration => 
+    moment
     .duration(duration, "seconds")
     .format("mm:ss", { trim: false });
-}
 
 const AudioDetails = () => {
   const { curTime, duration, initDur, currentTrackName, trackList, albumName } = useAudioPlayer();

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { PaddingContainer } from '../PaddingContainer';
 import { Text } from '../Text';
 import { StyledIcon } from './ShareInfo.styles';
-import { faFacebookF, faTwitter, faLinkedin, faTumblr, faPinterest } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faTwitter, faLinkedinIn, faTumblr, faPinterest } from '@fortawesome/free-brands-svg-icons';
 
 
 const ShareInfo = ({
@@ -20,7 +20,7 @@ const ShareInfo = ({
         <StyledIcon icon={faTwitter} />
       </a>
       <a href='https://www.linkedin.com/'>
-        <StyledIcon icon={faLinkedin} />
+        <StyledIcon icon={faLinkedinIn} />
       </a>
       <a href='https://www.tumblr.com/'>
         <StyledIcon icon={faTumblr} />

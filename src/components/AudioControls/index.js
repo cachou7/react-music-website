@@ -13,13 +13,13 @@ const AudioControls = () => {
   return (
     <PaddingContainer className='player' top='50px'>
       <StyledRow>
-        <StyledCol back xs={4} onClick={playPrevTrack}>
+        <StyledCol back='true' xs={4} onClick={playPrevTrack}>
           <FontAwesomeIcon icon={faFastBackward} size="1x" />
         </StyledCol>
-        <StyledCol play xs={4} onClick={togglePlay}>
+        <StyledCol play='true' xs={4} onClick={togglePlay}>
           <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} size="sm" />
         </StyledCol>
-        <StyledCol forward xs={4} onClick={playNextTrack}>
+        <StyledCol forward='true' xs={4} onClick={playNextTrack}>
           <FontAwesomeIcon icon={faFastForward} size="1x" />
         </StyledCol>
       </StyledRow>

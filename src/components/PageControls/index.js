@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { PaddingContainer } from '../PaddingContainer';
 import { StyledArrows, StyledSquare, Left, Right, Center } from './PageControls';
 import { faThLarge, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';

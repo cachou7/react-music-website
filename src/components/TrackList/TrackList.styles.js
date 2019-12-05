@@ -1,3 +1,9 @@
+import styled from '@emotion/styled';
+
+const PaddedDiv = styled.div`
+  padding: 15px 20px;
+`;
+
 const standardSpan = {
   fontSize: '18px',
   color: '#8a8a8a',
@@ -12,14 +18,10 @@ const selectedSpan = {
   cursor: 'pointer'
 }
 
-const paddedDiv = {
-  padding: '15px 20px'
-}
-
 const styledIcon = {
   fontSize: '12px',
   marginRight: '12px',
   verticalAlign: 'baseline'
 }
 
-export { standardSpan, selectedSpan, paddedDiv, styledIcon }
+export { standardSpan, selectedSpan, PaddedDiv, styledIcon }

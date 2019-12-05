@@ -33,7 +33,11 @@ const AccordionCard = ({
 };
 
 AccordionCard.propTypes = {
-  eventKey: PropTypes.isRequired
+  eventKey: PropTypes.string,
+  title: PropTypes.string,
+  info: PropTypes.string,
+  isSelected: PropTypes.string,
+  clickHandler: PropTypes.func
 }
 
 export { AccordionCard };

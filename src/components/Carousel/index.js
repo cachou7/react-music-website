@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { StyledCarousel, StyledWrapper } from './Carousel.styles';
 import { Span } from '../Span';
 import { CarouselCard } from '../CarouselCard';
@@ -31,9 +30,9 @@ const MyCarousel = () => {
   return (
     <StyledWrapper>
       <StyledCarousel controls={false} wrap={true} touch={true} indicators={false} direction={direction} activeIndex={index} interval='3000' onSelect={handleSelect}>
-        {reviews.map((review) => (
+        {reviews.map((review, key) => (
           <Carousel.Item>
-            <CarouselCard textContent={review.info} authorName={'— ' + review.name} onClick={() => setIndex(index - 1)} handleSelect={handleSelect} />
+            <CarouselCard textContent={review.info} authorName={'— ' + review.name} />
           </Carousel.Item>
         ))}
       </StyledCarousel>

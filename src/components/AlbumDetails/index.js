@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StyledDetails } from './AlbumDetails.styles';
 import { Span } from '../Span';
 
 const AlbumDetails = ({
@@ -14,8 +13,8 @@ const AlbumDetails = ({
   );
 
 AlbumDetails.propTypes = {
-  title: PropTypes.isRequired,
-  info: PropTypes.isRequired
+  title: PropTypes.string,
+  info: PropTypes.string
 }
 
 export { AlbumDetails };
