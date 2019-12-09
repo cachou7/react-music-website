@@ -30,8 +30,8 @@ const MyCarousel = () => {
   return (
     <StyledWrapper>
       <StyledCarousel controls={false} wrap={true} touch={true} indicators={false} direction={direction} activeIndex={index} interval='3000' onSelect={handleSelect}>
-        {reviews.map((review, key) => (
-          <Carousel.Item>
+        {reviews.map((review, index) => (
+          <Carousel.Item key={index}>
             <CarouselCard textContent={review.info} authorName={'— ' + review.name} />
           </Carousel.Item>
         ))}

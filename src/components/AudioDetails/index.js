@@ -6,6 +6,8 @@ import { wrapperDiv, albumTextDiv, audioTimeDiv } from './AudioDetails.styles';
 import moment from "moment";
 import momentDurationFormatSetup from "moment-duration-format";
 
+momentDurationFormatSetup(moment);
+
 const formatDuration = duration => 
     moment
     .duration(duration, "seconds")

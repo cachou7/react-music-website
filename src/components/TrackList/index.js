@@ -16,7 +16,7 @@ const TrackList = () => {
         Tracklist
       </Text>
       {trackList.map((track, index) => (
-        <PaddedDiv>
+        <PaddedDiv key={index}>
           <span style={currentTrackName === track.name ? selectedSpan : standardSpan} onClick={() => playTrack(index)}>
             {currentTrackName === track.name ? <FontAwesomeIcon icon={faPlay} style={styledIcon} /> : <span>{index + 1}. </span>}
             {track.name}

@@ -5,8 +5,7 @@ import { useAudioPlayer } from '../../global/hooks/useAudioPlayer';
 const AudioBar = ({ onTimeUpdate }) => {
 	const { curTime, duration } = useAudioPlayer();
 	const curPercentage = (curTime === undefined || duration === undefined) ? 0 : (curTime / duration) * 100;
-	
-	console.log(curTime, duration, curPercentage);
+  
 	function calcClickedTime(e) {
 		const clickPositionInPage = e.pageX;
 		const bar = document.querySelector(".progress-bar");
@@ -18,7 +17,7 @@ const AudioBar = ({ onTimeUpdate }) => {
 	}
 
 	return (
-		<StyledAudioBar className="progress-bar" curPercentage={curPercentage} onClick={e => onTimeUpdate(calcClickedTime(e))} />
+		<StyledAudioBar className="progress-bar" curpercentage={curPercentage} onClick={e => onTimeUpdate(calcClickedTime(e))} />
 	);
 };
 

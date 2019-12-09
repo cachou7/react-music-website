@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useCallback } from "react";
 import { AudioPlayerContext } from '../AudioPlayerContext';
 
 const useAudioPlayer = () => {
@@ -7,13 +7,13 @@ const useAudioPlayer = () => {
   const [curTime, setCurTime] = useState();
   const [clickedTime, setClickedTime] = useState();
 
-  const playTrack = (index) => {
+  const playTrack = useCallback((index) => {
     state.audioPlayer.pause();
     state.audioPlayer.src = state.tracks[index].url;
     state.audioPlayer.load();
     state.audioPlayer.play();
     setState(state => ({ ...state, currentTrackIndex: index, isPlaying: true }));
-  }
+  }, [setState, state.audioPlayer, state.tracks]);
 
   const togglePlay = () => {
     if (state.audioPlayer.readyState === 0) {
@@ -32,12 +32,12 @@ const useAudioPlayer = () => {
     }
   }
 
-  const playNextTrack = () => {
+  const playNextTrack = useCallback(() => {
     const newIndex = Math.min(state.currentTrackIndex + 1, state.tracks.length);
     if (newIndex !== state.tracks.length) {
       playTrack(newIndex);
     }
-  }
+  }, [playTrack, state.currentTrackIndex, state.tracks.length]);
 
   useEffect(() => {
 
@@ -62,7 +62,7 @@ const useAudioPlayer = () => {
       state.audioPlayer.removeEventListener("timeupdate", setAudioTime);
       state.audioPlayer.removeEventListener("ended", playNextTrack);
     }
-  });
+  }, [state.audioPlayer, playNextTrack, clickedTime, curTime]);
 
   return {
     curTime,

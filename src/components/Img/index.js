@@ -6,10 +6,10 @@ import { PaddingContainer } from '../PaddingContainer';
 const Img = ({
   srcUrl
 }) => (
-    <PaddingContainer top='75px' >
-      <StyledImage src={srcUrl} fluid />
-    </PaddingContainer >
-  );
+  <PaddingContainer top='75px' >
+    <StyledImage src={srcUrl} fluid />
+  </PaddingContainer >
+);
 
 Img.propTypes = {
   imgSrc: PropTypes.string
