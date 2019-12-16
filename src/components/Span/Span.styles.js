@@ -4,12 +4,12 @@ const types = {
   'title': {
     color: '#292929',
     weight: '420',
-    lineheight: '29px'
+    lineHeight: '29px'
   },
   'info': {
     color: '#8a8a8a',
     weight: '400',
-    lineheight: '29px'
+    lineHeight: '29px'
   },
   'accordionTitle': {
     color: '#8a8a8a',
@@ -52,7 +52,9 @@ const types = {
     color: 'black',
     float: 'right',
     weight: '700',
-    hover: 'gray'
+    hover: 'gray',
+    verticalAlign: 'middle',
+    lineHeight: '25px'
   },
   'reviewAuthor': {
     color: 'black',
@@ -99,7 +101,7 @@ const StyledText = styled.span`
   position: ${props => types[props.type].position};
   text-align: ${props => types[props.type].textAlign};
   font-weight: ${props => types[props.type].weight};
-  line-height: ${props => types[props.type].lineheight};
+  line-height: ${props => types[props.type].lineHeight};
   float: ${props => types[props.type].float};
   flex: ${props => types[props.type].flex};
   display: ${props => types[props.type].display};
@@ -108,6 +110,7 @@ const StyledText = styled.span`
   }
   cursor: ${props => types[props.type].cursor};
   margin-right: ${props => types[props.type].marginRight};
+  vertical-align: ${props => types[props.type].verticalAlign};
 `;
 
 export { StyledText };

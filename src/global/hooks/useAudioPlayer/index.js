@@ -10,8 +10,16 @@ const useAudioPlayer = () => {
   const playTrack = useCallback((index) => {
     state.audioPlayer.pause();
     state.audioPlayer.src = state.tracks[index].url;
-    state.audioPlayer.load();
-    state.audioPlayer.play();
+    const playPromise = state.audioPlayer.play();
+    if (playPromise) {
+      playPromise.then(_ => {
+        state.audioPlayer.play();
+      })
+      .catch(error => {
+        console.log("Loading music");
+      });
+    }
+
     setState(state => ({ ...state, currentTrackIndex: index, isPlaying: true }));
   }, [setState, state.audioPlayer, state.tracks]);
 
