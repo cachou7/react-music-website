@@ -9,7 +9,7 @@ const useAudioPlayer = () => {
 
   const playTrack = useCallback((index) => {
     state.audioPlayer.pause();
-    state.audioPlayer.src = state.tracks[index].url;
+    state.audioPlayer.src = state.tracks[index].preview_url;
     const playPromise = state.audioPlayer.play();
     if (playPromise) {
       playPromise.then(_ => {
@@ -25,7 +25,7 @@ const useAudioPlayer = () => {
 
   const togglePlay = () => {
     if (state.audioPlayer.readyState === 0) {
-      state.audioPlayer = new Audio(state.tracks[0].url);
+      state.audioPlayer = new Audio(state.tracks[0].preview_url);
       setState(state => ({ ...state, currentTrackIndex: 0 }));
     }
 

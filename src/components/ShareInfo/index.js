@@ -7,12 +7,15 @@ import { faFacebookF, faTwitter, faLinkedinIn, faTumblr, faPinterest } from '@fo
 
 
 const ShareInfo = ({
-  headerTitle
+  headerTitle,
+  artistId
 }) => (
     <PaddingContainer top='75px'>
       <Text type='infoHeader'>
         {headerTitle}
       </Text>
+      <iframe src={artistId} width="300" height="56" scrolling="no" frameBorder="0" style={{border:'none', overflow:'hidden'}} allowtransparency="true"></iframe>
+      <br /><br />
       <a href='https://www.facebook.com/'>
         <StyledIcon icon={faFacebookF} />
       </a>

@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { renderHook } from '@testing-library/react-hooks';
 import { useAudioPlayer } from '..';
+import { trackList } from '../../../constants/constants';
 
 //const setState = jest.fn();
 //const useStateSpy = jest.spyOn(React, 'useState');
@@ -14,7 +15,8 @@ describe('useAudioPlayer', () => {
     expect(useAudioPlayer).toBeDefined();
   });
   it('called with no ref', () => {
-    console.log(renderAudioPlayer().result);
+    console.log(renderAudioPlayer(trackList));
     //console.log(albumName);
+    expect(renderAudioPlayer.html());
   });
 });

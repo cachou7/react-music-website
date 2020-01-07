@@ -1,19 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Text } from '../Text';
 import { StyledHeader } from './HeaderContainer.styles';
 
 const HeaderContainer = props => {
-  const { children } = props;
+  const { albumName } = props;
 
   return (
     <StyledHeader>
-      {children}
+        <Text type="headerTitle">Mixtape / { albumName } </Text>
+        <Text type="subHeader">{ albumName }</Text>
     </StyledHeader>
   );
-}
-
-HeaderContainer.propTypes = {
-  children: PropTypes.node.isRequired
 }
 
 export { HeaderContainer };

@@ -5,7 +5,7 @@ const trackList = {
   tracks: [
     {
       name: 'Dreaming Of Joy',
-      url: '/assets/Ghost-Soul.mp3',
+      url: 'https://p.scdn.co/mp3-preview/a91b5296dba8cf47d0427a6eb54307f53dc26c64?cid=35cf31261b7d43bc849e1893d0e415f6',
       buyLink: true
     },
     {
