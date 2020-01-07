@@ -8,20 +8,23 @@ function parseArtists(mainArtist, otherArtists) {
   console.log(otherArtists)
   let i;
   let j;
-  let otherArtistsList = [];
+  let otherArtistsList = new Set();
   let res = "";
   for (i = 0; i < otherArtists.length; ++i) {
     for (j = 0; j < otherArtists[i].artists.length; ++j) {
       if (otherArtists[i].artists[j].name !== mainArtist) {
-        otherArtistsList.push(otherArtists[i].artists[j].name);
+        otherArtistsList.add(otherArtists[i].artists[j].name);
       }
     }
   }
 
-  for (i = 0; i < otherArtistsList.length - 1; ++i) {
-    res += otherArtistsList[i] + ", ";
+  let iter = otherArtistsList.values();
+  if (otherArtistsList.size >= 1) {
+    res += iter.next().value
   }
-  res += otherArtistsList[otherArtistsList.length-1];
+  for (i = 1; i < otherArtistsList.size; ++i) {
+    res += ", " + iter.next().value;
+  }
   return res;
 }
 

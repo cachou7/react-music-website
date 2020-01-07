@@ -17,6 +17,6 @@ describe('useAudioPlayer', () => {
   it('called with no ref', () => {
     console.log(renderAudioPlayer(trackList));
     //console.log(albumName);
-    expect(renderAudioPlayer.html());
+    //
   });
 });

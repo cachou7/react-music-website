@@ -20,10 +20,18 @@ import axios from 'axios';
 
 // porter artist id = 3dz0NnIZhtKKeXZxLOxCam
 // worlds album id = 7AJPV0L05IyIBid97AvwVD
+// dabin artist id = 7lZauDnRoAC3kmaYae2opv
+// wild youth id = 2gUJErMHt6BoUBIFdlU5rN
+// illenium artist id = 45eNHdiiabvmbp4erw26rg
+// ashes album id = 1hG9qANsJg5lYm36MYun97
 
-export const authEndpoint = 'https://accounts.spotify.com/authorize';
+const artistId = "45eNHdiiabvmbp4erw26rg";
+const albumId = "1hG9qANsJg5lYm36MYun97";
 
-const clientId = "35cf31261b7d43bc849e1893d0e415f6";
+export const spotifyAuthEndpoint = 'https://accounts.spotify.com/authorize';
+
+const geniusToken = "1yiBQZo9nPxBl2r6tIpwm9WWFfsSJN_0TbXDhRcWA4bMc9QvNnlqqu75o6XSRPIM";
+const spotifyClientId = "35cf31261b7d43bc849e1893d0e415f6";
 const redirectUri = "http://localhost:3000";
 const scopes = [];
 
@@ -51,11 +59,7 @@ function App() {
   });
   const [artist, setArtist] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  const artistId = "https://open.spotify.com/follow/1/?uri=spotify:artist:" + "3dz0NnIZhtKKeXZxLOxCam" +"&size=detail&theme=light";
-
-  /*const config = {
-    headers: {'Authorization': "Bearer " + token}
-  };*/
+  const artistFollow = "https://open.spotify.com/follow/1/?uri=spotify:artist:" + artistId +"&size=detail&theme=light";
 
   useEffect(() => {
     const CancelToken = axios.CancelToken;
@@ -63,13 +67,14 @@ function App() {
 
     async function loadAlbumData() {
       try {
-        await axios.get("https://api.spotify.com/v1/albums/7AJPV0L05IyIBid97AvwVD", {
+        await axios.get(`https://api.spotify.com/v1/albums/${albumId}`, {
           headers: {'Authorization': "Bearer " + token}, cancelToken: source.token
         }).then(response => {
           setAlbum(response.data);
           trackList['tracks'] = response.data.tracks.items;
           trackList['albumName'] = response.data.name;
           console.log(response.data);
+          setIsLoading(false);
         });
       } catch (error) {
         if (axios.isCancel(error)) {
@@ -82,11 +87,12 @@ function App() {
 
     async function loadArtistData() {
       try {
-        await axios.get("https://api.spotify.com/v1/artists/3dz0NnIZhtKKeXZxLOxCam", {
+        await axios.get(`https://api.spotify.com/v1/artists/${artistId}`, {
           headers: {'Authorization': "Bearer " + token}, cancelToken: source.token
       }).then(response => {
           setArtist(response.data);
           console.log(response.data);
+          setIsLoading(false);
         });
       } catch (error) {
         if (axios.isCancel(error)) {
@@ -104,7 +110,6 @@ function App() {
         setToken(_token);
         loadAlbumData();
         loadArtistData();
-        setIsLoading(false);
       }
     })();
 
@@ -121,7 +126,7 @@ function App() {
       <div className="login-page">
         <a
           className="btn login-button"
-          href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}&response_type=token&show_dialog=true`}
+          href={`${spotifyAuthEndpoint}?client_id=${spotifyClientId}&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}&response_type=token&show_dialog=true`}
         >
         <img className="btn-logo" src="https://i.ibb.co/drkPvst/Spotify-Icon-RGB-White.png" alt="spot" />
         <span className="btn-text">LOG IN</span>
@@ -144,7 +149,7 @@ function App() {
             <AlbumInfo headerTitle="About Album" artistName={album.artists[0].name} labelName={album.label} releaseDate={album.release_date} albumGenre={album.genres[0]} otherArtists={album.tracks.items} />
             <LyricsInfo headerTitle="Available Lyrics" />
             <ReviewsInfo headerTitle="Album Reviews" />
-            <ShareInfo headerTitle="Share" artistId={artistId}/>
+            <ShareInfo headerTitle="Share" artistId={artistFollow}/>
           </Col>
           <AvailableOnInfo headerTitle="Available On" />
           <LatestVideoInfo headerTitle="Latest Video" />

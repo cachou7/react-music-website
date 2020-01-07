@@ -10,6 +10,10 @@ import { standardSpan, selectedSpan, PaddedDiv, styledIcon } from './TrackList.s
 
 const TrackList = () => {
   const { trackList, currentTrackName, playTrack } = useAudioPlayer();
+  while (currentTrackName === "Dreaming of Joy") {
+    console.log("loading tracklist...")
+  }
+
   return (
     <PaddingContainer top='75px'>
       <Text type="infoHeader">

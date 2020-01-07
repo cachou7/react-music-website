@@ -13,7 +13,7 @@ const Accordion = () => {
       setSelected(eventKey);
     }
   };
-
+  
   return (
   <StyledAccordion>
     <AccordionCard 
